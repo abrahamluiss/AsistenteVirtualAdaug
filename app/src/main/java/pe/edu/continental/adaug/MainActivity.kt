@@ -16,19 +16,19 @@ class MainActivity : AppCompatActivity() {
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
             IntroSlide(
-                "SunLight",
-                "xd xdxd xdxd xd",
+                "Hola",
+                "Mi nombre es adaug",
                 R.drawable.ic_radio
 
             ),
             IntroSlide(
-                "hey hey",
-                "gaaa",
+                "Te escucho",
+                "Puedes preguntarme lo que sea",
                 R.drawable.ic_music_and_multimedia
             ),
             IntroSlide(
-                "ajaja",
-                "werqwer",
+                "Siempre atento",
+                "Presiona el icono de micro para comunicarnos",
                 R.drawable.ic_voice
             )
         )
