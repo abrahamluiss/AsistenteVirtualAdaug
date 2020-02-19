@@ -2,4 +2,8 @@
     <string name="app_name">Adaug</string>
     <string name="saltar_intro">Saltar intro</string>
     <string name="siguiente">siguiente</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="asistente_virtual_adaug">Asistente Virtual ADAUG</string>
+    <string name="correo">Correo</string>
+    <string name="correo_gmail_com">correo@gmail.com</string>
 </resources>
