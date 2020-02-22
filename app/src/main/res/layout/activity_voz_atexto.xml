@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
     tools:context=".VozATexto">
     <ScrollView
         android:layout_width="match_parent"
@@ -15,6 +16,8 @@
     </ScrollView>
         <TextView
             android:id="@+id/txtEntrada"
+            android:textColor="@color/colorWhite"
+            android:textSize="24dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <LinearLayout
@@ -31,7 +34,7 @@
                 android:id="@+id/btnHablar"
                 android:layout_width="351dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_foreground" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
