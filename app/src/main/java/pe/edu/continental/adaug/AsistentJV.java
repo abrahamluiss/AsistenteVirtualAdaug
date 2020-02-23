@@ -86,7 +86,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("chiste", "¿Sabes que mi hermano anda en bicicleta desde los 4 años? Mmm, ya debe estar lejos"));
         respuestas.add(new Respuestas("adios", "que descanses"));
         respuestas.add(new Respuestas("como estas", "esperando serte de ayuda"));
-        respuestas.add(new Respuestas("nombre", "mis amigos me llaman Mina"));
+        respuestas.add(new Respuestas("nombre", "mis amigos me llaman Abraham"));
         respuestas.add(new Respuestas("Abrir google", "mis amigos me llaman Mina"));
         respuestas.add(new Respuestas("¿Cual es la distancia a la plaza constitución huancayo?", "La distancia es; "+rptaDistHyo));
 

@@ -8,7 +8,7 @@
     <string name="correo_gmail_com">correo@gmail.com</string>
     <string name="contrase_a">Contraseña</string>
     <string name="passw">*********</string>
-    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="inicia_sesion">Inicia Sesión</string>
     <string name="se_olvida_la_contrase_a">Se olvida la contraseña?</string>
     <string name="no_tiene_una_cuenta_registrese_ahora">No tiene una cuenta? Registrese ahora</string>
 </resources>
