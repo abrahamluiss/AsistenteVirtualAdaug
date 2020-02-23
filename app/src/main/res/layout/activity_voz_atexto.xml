@@ -32,9 +32,11 @@
 
             <ImageButton
                 android:id="@+id/btnHablar"
-                android:layout_width="351dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:background="@color/colorTransparente"
+                android:tint="@color/colorWhite"
+                android:src="@drawable/ic_audio" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

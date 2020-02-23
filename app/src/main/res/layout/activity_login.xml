@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/campus" />
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -98,7 +100,7 @@
         android:layout_marginStart="8dp"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:src="@drawable/ic_radio"
+        android:src="@drawable/arroba"
         android:tint="@color/colorWhite"
         android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="@+id/txtEmail"
@@ -144,7 +146,7 @@
         android:layout_marginStart="8dp"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:src="@drawable/ic_radio"
+        android:src="@drawable/pass"
         android:tint="@color/colorWhite"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toTopOf="@+id/ViewPassDivision"
@@ -175,17 +177,18 @@
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/ViewPassDivision"/>
     <TextView
-        android:id="@+id/txtPassOlvidada"
+        android:id="@+id/txtRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/se_olvida_la_contrase_a"
+        android:text="@string/registro_de_cuenta"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnIniciaSesion"
         />
+
     <LinearLayout
         android:id="@+id/lytRedSocial"
         android:layout_width="match_parent"
@@ -193,23 +196,19 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/txtPassOlvidada"
-        >
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/txtRegistro"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp">
+
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_radio"
-            android:tint="@color/colorWhite"/>
+            android:src="@drawable/ic_facebook"
+            android:tint="@color/colorWhite" />
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lytRedSocial"
-        android:gravity="center"
-        android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        android:text="@string/no_tiene_una_cuenta_registrese_ahora"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
