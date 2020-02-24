@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import pe.edu.continental.adaug.Actividades.Home;
 import pe.edu.continental.adaug.Actividades.Registrar;
 import pe.edu.continental.adaug.Entidades.Usuario;
 
@@ -39,7 +40,7 @@ public class LoginFbUser extends AppCompatActivity {
         }else if(dao.login(u,p)==1){
             Usuario ux=dao.getUsuario(u,p); //guardar dato
             Toast.makeText(this, "Datos correctos", Toast.LENGTH_SHORT).show();
-           i= new Intent (this, VozATexto.class);
+           i= new Intent (this, Home.class);
            i.putExtra("Id", ux.getId());
             startActivity(i);
             finish();
