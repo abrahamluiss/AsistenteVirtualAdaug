@@ -6,10 +6,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/listaUb"
+    android:background="@drawable/gradiente"
     tools:context=".Actividades.ListaUbicacion">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lista_de_ubicaci_n"
+        android:textColor="@color/colorWhite"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:fontFamily="casual"/>
 
     <ListView
         android:id="@+id/listaUbicacion"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/colorWhite"
+        android:cacheColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:scrollbarSize="24dp" >
+
+    </ListView>
 </LinearLayout>
