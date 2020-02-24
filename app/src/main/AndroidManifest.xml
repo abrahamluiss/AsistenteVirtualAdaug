@@ -32,7 +32,7 @@
         </activity>
         <activity android:name=".Actividades.Asistent" />
         <activity android:name=".Actividades.MainActivity" />
-        <activity android:name=".AsistentJV" />
+        <activity android:name=".Actividades.AsistentJV" />
 
     </application>
 

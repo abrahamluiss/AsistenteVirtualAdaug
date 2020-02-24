@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import pe.edu.continental.adaug.AsistentJV;
 import pe.edu.continental.adaug.Entidades.Usuario;
 import pe.edu.continental.adaug.R;
 import pe.edu.continental.adaug.daoUsuario;

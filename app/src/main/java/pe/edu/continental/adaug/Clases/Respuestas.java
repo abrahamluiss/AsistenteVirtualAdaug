@@ -1,4 +1,4 @@
-package pe.edu.continental.adaug;
+package pe.edu.continental.adaug.Clases;
 
 public class Respuestas {
     private String cuestion;

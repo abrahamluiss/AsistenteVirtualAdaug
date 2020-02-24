@@ -1,4 +1,4 @@
-package pe.edu.continental.adaug;
+package pe.edu.continental.adaug.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
+
+import pe.edu.continental.adaug.R;
+import pe.edu.continental.adaug.Clases.Respuestas;
 
 public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
