@@ -56,14 +56,18 @@ class MainActivity : AppCompatActivity() {
             if (introSliderViewPager.currentItem + 1 < introSliderAdapter.itemCount) {
                 introSliderViewPager.currentItem += 1
             } else {
+
                 Intent(applicationContext, LoginFbUser::class.java).also {
+
                     startActivity(it)//otra act
                     finish()
                 }
             }
         }
         txtSkipIntro.setOnClickListener {
+
             Intent(applicationContext, LoginFbUser::class.java).also {
+
                 startActivity(it)//otra actv
                 finish()
             }
