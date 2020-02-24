@@ -33,7 +33,6 @@ public class Ubicacion extends AppCompatActivity {
     Button btnEnviar, btnListarUbic;
     DatabaseHelper miBD;
     Intent i;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
