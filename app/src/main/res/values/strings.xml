@@ -15,4 +15,6 @@
     <string name="registrar">Registrar</string>
     <string name="nombres">Nombres</string>
     <string name="apellidos">Apellidos</string>
+    <string name="guardar_y_enviar">Guardar y enviar</string>
+    <string name="listar_ubicacion">Listar Ubicacion</string>
 </resources>

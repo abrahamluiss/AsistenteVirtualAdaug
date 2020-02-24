@@ -13,15 +13,24 @@
         android:layout_alignParentLeft="true"
         android:orientation="vertical" >
         <TextView
-            android:id="@+id/mensaje_id"
+            android:id="@+id/txtMuestraUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
-        <TextView
-            android:id="@+id/mensaje_id2"
+            android:textSize="30sp"
+             />
+        <Button
+             android:id="@+id/btnGuardaUbicacion"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="24sp"
+             android:text="@string/guardar_y_enviar"/>
+
+        <Button
+            android:id="@+id/btnListarUbicaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:textSize="24sp"
+            android:text="@string/listar_ubicacion" />
 
     </LinearLayout>
 

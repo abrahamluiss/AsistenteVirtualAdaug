@@ -16,30 +16,73 @@ import android.location.LocationProvider;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import pe.edu.continental.adaug.Entidades.DatabaseHelper;
 import pe.edu.continental.adaug.R;
 
 public class Ubicacion extends AppCompatActivity {
-    TextView mensaje1;
-    TextView mensaje2;
+    TextView txtDireccion;
+    Button btnEnviar, btnListarUbic;
+    DatabaseHelper miBD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubicacion);
 
-        mensaje1 = findViewById(R.id.mensaje_id);
-        mensaje2 =  findViewById(R.id.mensaje_id2);
+        txtDireccion = findViewById(R.id.txtMuestraUbicacion);
+        btnEnviar=findViewById(R.id.btnGuardaUbicacion);
+        btnListarUbic=findViewById(R.id.btnListarUbicaciones);
+
+        miBD = new DatabaseHelper(this);
+
+
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
         } else {
             locationStart();
         }
+
+        btnListarUbic.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Ubicacion.this, ListaUbicacion.class);
+                startActivity(i);
+            }
+        }));
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String datoDireccion = txtDireccion.getText().toString();
+                if(txtDireccion.length()!=0){
+                    agregar(datoDireccion);
+                }else {
+                    Toast.makeText(Ubicacion.this, "Ingresa algo", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
+    //metodo order guardar
+    public void agregar(String nuevaEntrada){
+        boolean insertarDato = miBD.addData(nuevaEntrada);
+        if(insertarDato==true){
+            Toast.makeText(this, "Dato enviado gracias", Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(this, "Dato no enviado!!", Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void locationStart() {
         LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Localizacion Local = new Localizacion();
@@ -55,8 +98,8 @@ public class Ubicacion extends AppCompatActivity {
         }
         mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
-        mensaje1.setText("Localización agregada");
-        mensaje2.setText("");
+        txtDireccion.setText("Localización agregada");
+        txtDireccion.setText("");
     }
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 1000) {
@@ -75,8 +118,8 @@ public class Ubicacion extends AppCompatActivity {
                         loc.getLatitude(), loc.getLongitude(), 1);
                 if (!list.isEmpty()) {
                     Address DirCalle = list.get(0);
-                    mensaje2.setText("Mi direccion es: \n"
-                            + DirCalle.getAddressLine(0));
+                    txtDireccion.setText("Mi direccion es: "
+                            + DirCalle.getAddressLine(0)+" \n Longitud: "+loc.getLongitude()+"\n Latitud: "+loc.getLatitude());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -98,20 +141,22 @@ public class Ubicacion extends AppCompatActivity {
             // debido a la deteccion de un cambio de ubicacion
             loc.getLatitude();
             loc.getLongitude();
-            String Text = "Mi ubicacion actual es: " + "\n Lat = "
+            /**
+             * Actualizacion constante de ubicacion
+             * String Text = "Mi ubicacion actual es: " + "\n Lat = "
                     + loc.getLatitude() + "\n Long = " + loc.getLongitude();
-            mensaje1.setText(Text);
+            mensaje1.setText(Text);**/
             this.ubicacion.setLocation(loc);
         }
         @Override
         public void onProviderDisabled(String provider) {
             // Este metodo se ejecuta cuando el GPS es desactivado
-            mensaje1.setText("GPS Desactivado");
+            txtDireccion.setText("GPS Desactivado");
         }
         @Override
         public void onProviderEnabled(String provider) {
             // Este metodo se ejecuta cuando el GPS es activado
-            mensaje1.setText("GPS Activado");
+            txtDireccion.setText("GPS Activado");
         }
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
