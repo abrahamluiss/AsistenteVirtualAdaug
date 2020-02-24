@@ -16,12 +16,24 @@
         android:layout_marginTop="30dp"
         app:srcCompat="@drawable/conti" />
 
+    <TextView
+        android:id="@+id/txtAsistentevoz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        android:fontFamily="casual"
+        android:text="Asistente de voz Adaug" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/txtAsistentevoz"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
         android:id="@+id/cardView" >

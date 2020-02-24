@@ -19,4 +19,7 @@
     <string name="listar_ubicacion">Listar Ubicacion</string>
     <string name="escribir_con_voz">Escribir con voz</string>
     <string name="asistente_virtual">Asistente Virtual</string>
+    <string name="lista_de_ubicaci_n">Lista de ubicación</string>
+    <string name="bienvenido">Bienvenido:</string>
+    <string name="ubicacion">Ubicacion</string>
 </resources>
