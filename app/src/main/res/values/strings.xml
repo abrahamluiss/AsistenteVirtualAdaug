@@ -17,4 +17,6 @@
     <string name="apellidos">Apellidos</string>
     <string name="guardar_y_enviar">Guardar y enviar</string>
     <string name="listar_ubicacion">Listar Ubicacion</string>
+    <string name="escribir_con_voz">Escribir con voz</string>
+    <string name="asistente_virtual">Asistente Virtual</string>
 </resources>

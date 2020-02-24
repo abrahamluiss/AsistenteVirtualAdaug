@@ -21,23 +21,35 @@
         android:id="@+id/btnVoz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="IrVoz"
-        android:text="Button"
+        android:text="@string/escribir_con_voz"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NombreAp" />
+
+        app:layout_constraintTop_toBottomOf="@+id/btnAsitente" />
 
     <Button
         android:id="@+id/btnUbicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ubicacion"
         android:onClick="ubicacion"
+        android:text="Ubicacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVoz"
         app:layout_constraintVertical_bias="0.193" />
+
+    <Button
+        android:id="@+id/btnAsitente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="@string/asistente_virtual"
+        android:onClick="Asistente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreAp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

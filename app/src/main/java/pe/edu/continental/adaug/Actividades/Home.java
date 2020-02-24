@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import pe.edu.continental.adaug.AsistentJV;
 import pe.edu.continental.adaug.Entidades.Usuario;
 import pe.edu.continental.adaug.R;
 import pe.edu.continental.adaug.daoUsuario;
@@ -18,7 +19,7 @@ public class Home extends AppCompatActivity {
     daoUsuario dao;
     Usuario u;
     int id=0;
-    Button btnVoz, btnUbicacion;
+    Button btnVoz, btnUbicacion, btnAsistente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,8 @@ public class Home extends AppCompatActivity {
         NombreAp = findViewById(R.id.NombreAp);
         btnVoz = findViewById(R.id.btnVoz);
         btnUbicacion= findViewById(R.id.btnUbicacion);
+        btnAsistente= findViewById(R.id.btnAsitente);
+
 
         Bundle b = getIntent().getExtras();
         id=b.getInt("IdNA");
@@ -45,4 +48,11 @@ public class Home extends AppCompatActivity {
         Intent i = new Intent(this, Ubicacion.class);
         startActivity(i);
     }
+
+        public void Asistente(View v){
+        Intent i = new Intent(this, AsistentJV.class);
+        startActivity(i);
+    }
+
+
 }

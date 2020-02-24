@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".Actividades.Asistent" />
         <activity android:name=".Actividades.MainActivity" />
+        <activity android:name=".AsistentJV" />
+
     </application>
 
 </manifest>
