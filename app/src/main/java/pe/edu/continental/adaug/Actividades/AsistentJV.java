@@ -90,8 +90,9 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("chiste", "¿Sabes que mi hermano anda en bicicleta desde los 4 años? Mmm, ya debe estar lejos"));
         respuestas.add(new Respuestas("adios", "que descanses"));
         respuestas.add(new Respuestas("como estas", "esperando serte de ayuda"));
-        respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"));
-        respuestas.add(new Respuestas("¿Cual es mi ubicación?", "Tu ubicación es "+miUbicacion));
+        respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"+miUbicacion));
+        respuestas.add(new Respuestas("mi direccion", " "+miUbicacion));
+
 
 
         return respuestas;

@@ -41,21 +41,21 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="251dp" />
+            android:layout_height="98dp" />
 
         <Button
-             android:id="@+id/btnGuardaUbicacion"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:textSize="24sp"
-             android:text="@string/guardar_y_enviar"/>
+            android:id="@+id/btnGuardaUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar_y_enviar"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btnListarUbicaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="@string/listar_ubicacion" />
+            android:text="@string/listar_ubicacion"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

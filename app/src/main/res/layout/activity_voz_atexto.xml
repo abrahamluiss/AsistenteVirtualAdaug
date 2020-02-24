@@ -30,6 +30,7 @@
             android:id="@+id/txtEntrada"
             android:textColor="@color/colorWhite"
             android:textSize="24dp"
+            android:layout_below="@+id/txtAgenda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <LinearLayout
