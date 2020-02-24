@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import pe.edu.continental.adaug.Entidades.Usuario;
 import pe.edu.continental.adaug.R;
-import pe.edu.continental.adaug.VozATexto;
 import pe.edu.continental.adaug.daoUsuario;
 
 public class Home extends AppCompatActivity {
@@ -26,12 +26,13 @@ public class Home extends AppCompatActivity {
         NombreAp = findViewById(R.id.NombreAp);
         btnVoz = findViewById(R.id.btnVoz);
 
-        dao = new daoUsuario(this);
         Bundle b = getIntent().getExtras();
-        id=b.getInt("id");
-        u=dao.getUsuario(id);
+        id=b.getInt("IdNA");
+        dao = new daoUsuario(this);
+        u=dao.getUsuarioById(id);
 
-        NombreAp.setText(u.getNombre()+ " "+u.getApellidos());
+        NombreAp.setText(u.getNombre()+" "+u.getApellidos());
+
 
     }
     public void IrVoz(View v){

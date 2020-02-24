@@ -1,4 +1,4 @@
-package pe.edu.continental.adaug;
+package pe.edu.continental.adaug.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,9 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import pe.edu.continental.adaug.Actividades.Home;
-import pe.edu.continental.adaug.Actividades.Registrar;
 import pe.edu.continental.adaug.Entidades.Usuario;
+import pe.edu.continental.adaug.R;
+import pe.edu.continental.adaug.daoUsuario;
 
 public class LoginFbUser extends AppCompatActivity {
     Intent i;
@@ -41,7 +41,7 @@ public class LoginFbUser extends AppCompatActivity {
             Usuario ux=dao.getUsuario(u,p); //guardar dato
             Toast.makeText(this, "Datos correctos", Toast.LENGTH_SHORT).show();
            i= new Intent (this, Home.class);
-           i.putExtra("Id", ux.getId());
+           i.putExtra("IdNA", ux.getId());
             startActivity(i);
             finish();
         }else {

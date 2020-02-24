@@ -92,11 +92,12 @@ public class daoUsuario {
         return null;
     }
     //metodo para buscar po id
+    
 
-    public Usuario getUsuario(int id){
+    public Usuario getUsuarioById(int id){
         lista=selectUsuario();
-        for (Usuario us:lista){
-            if (us.getId()==id){
+        for(Usuario us:lista){
+            if(us.getId()==id){
                 return us;
             }
         }

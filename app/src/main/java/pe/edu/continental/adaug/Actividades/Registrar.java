@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import pe.edu.continental.adaug.Entidades.Usuario;
-import pe.edu.continental.adaug.LoginFbUser;
 import pe.edu.continental.adaug.R;
 import pe.edu.continental.adaug.daoUsuario;
 

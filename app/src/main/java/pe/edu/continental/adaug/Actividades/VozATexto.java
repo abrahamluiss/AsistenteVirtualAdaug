@@ -1,4 +1,4 @@
-package pe.edu.continental.adaug;
+package pe.edu.continental.adaug.Actividades;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import pe.edu.continental.adaug.R;
 
 public class VozATexto extends AppCompatActivity {
 
