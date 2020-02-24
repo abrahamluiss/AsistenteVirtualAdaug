@@ -18,13 +18,14 @@ public class Home extends AppCompatActivity {
     daoUsuario dao;
     Usuario u;
     int id=0;
-    Button btnVoz;
+    Button btnVoz, btnUbicacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         NombreAp = findViewById(R.id.NombreAp);
         btnVoz = findViewById(R.id.btnVoz);
+        btnUbicacion= findViewById(R.id.btnUbicacion);
 
         Bundle b = getIntent().getExtras();
         id=b.getInt("IdNA");
@@ -37,6 +38,11 @@ public class Home extends AppCompatActivity {
     }
     public void IrVoz(View v){
         Intent i = new Intent(this, VozATexto.class);
+        startActivity(i);
+    }
+
+    public void ubicacion(View v){
+        Intent i = new Intent(this, Ubicacion.class);
         startActivity(i);
     }
 }
