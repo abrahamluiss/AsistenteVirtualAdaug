@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Actividades.Registrar">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/inicia_sesi_n"
+        android:text="@string/registrar"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -95,6 +96,7 @@
         android:background="@color/colorWhite"
         app:layout_constraintTop_toBottomOf="@id/ingresaCorreo"
         />
+
     <ImageView
         android:id="@+id/imgCorreo"
         android:layout_marginStart="8dp"
@@ -107,7 +109,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ViewCorreoDivision"
         app:layout_constraintStart_toStartOf="@id/ViewCorreoDivision"
         />
-
+    <!-- Contraseña -->
     <TextView
         android:id="@+id/txtPass"
         android:layout_width="0dp"
@@ -131,7 +133,7 @@
         android:background="@null"
         android:gravity="top"
         android:hint="@string/passw"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:minHeight="35dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
@@ -151,7 +153,7 @@
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toTopOf="@+id/ViewPassDivision"
         app:layout_constraintStart_toStartOf="@+id/ViewCorreoDivision"
-        app:layout_constraintTop_toBottomOf="@id/txtPass"
+        app:layout_constraintTop_toBottomOf="@id/ViewCorreoDivision"
         />
     <View
         android:id="@+id/ViewPassDivision"
@@ -163,52 +165,135 @@
         app:layout_constraintTop_toBottomOf="@id/inputContrasena"
         />
 
-    <Button
-        android:id="@+id/btnIniciaSesion"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/btn_background"
-        android:text="@string/inicia_sesi_n"
-        android:textStyle="bold"
-        android:textColor="@color/colorWhite"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/ViewPassDivision"/>
+
+
+
+<!-- Nombre -->
+
     <TextView
-        android:id="@+id/txtRegistro"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtNombre"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/registro_de_cuenta"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/nombres"
+        android:textAllCaps="true"
         android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnIniciaSesion"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/ViewPassDivision"
+        app:layout_constraintStart_toEndOf="@+id/imgPass"
+        app:layout_constraintTop_toBottomOf="@id/ViewPassDivision"
         />
 
-    <LinearLayout
-        android:id="@+id/lytRedSocial"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/inputNombre"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@id/txtRegistro"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="16dp">
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/nombres"
+        android:inputType="text"
+        android:minHeight="35dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@id/ViewPassDivision"
+        app:layout_constraintStart_toEndOf="@id/imgPass"
+        app:layout_constraintTop_toBottomOf="@id/txtNombre"
+        tools:ignore='Autofill'
+        />
+    <ImageView
+        android:id="@+id/imgNombre"
+        android:layout_marginStart="8dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_name"
+        android:tint="@color/colorWhite"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/ViewNombreDivision"
+        app:layout_constraintStart_toStartOf="@+id/ViewPassDivision"
+        app:layout_constraintTop_toBottomOf="@id/ViewPassDivision"/>
+    <View
+        android:id="@+id/ViewNombreDivision"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/inputNombre"
+        />
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_facebook"
-            android:tint="@color/colorWhite" />
-    </LinearLayout>
+
+
+
+    <!-- Apellidos -->
+    <TextView
+        android:id="@+id/txtAppellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/apellidos"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/ViewNombreDivision"
+        app:layout_constraintStart_toEndOf="@+id/imgNombre"
+        app:layout_constraintTop_toBottomOf="@id/ViewNombreDivision"
+        />
+
+    <EditText
+        android:id="@+id/inputApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/apellidos"
+        android:inputType="text"
+        android:minHeight="35dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@id/ViewNombreDivision"
+        app:layout_constraintStart_toEndOf="@id/imgNombre"
+        app:layout_constraintTop_toBottomOf="@id/txtAppellido"
+        tools:ignore='Autofill'
+        />
+    <ImageView
+        android:id="@+id/imgApellido"
+        android:layout_marginStart="8dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_name"
+        android:tint="@color/colorWhite"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/ViewApellidoDivision"
+        app:layout_constraintStart_toStartOf="@+id/ViewNombreDivision"
+        app:layout_constraintTop_toBottomOf="@id/ViewNombreDivision"/>
+    <View
+        android:id="@+id/ViewApellidoDivision"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/inputApellido"
+        />
+
+    <!-- Button -->
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn_background"
+        android:text="@string/registrar"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/ViewApellidoDivision"
+        tools:layout_editor_absoluteX="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
