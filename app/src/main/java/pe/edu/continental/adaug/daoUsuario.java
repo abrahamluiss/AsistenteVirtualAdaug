@@ -66,4 +66,40 @@ public class daoUsuario {
         }
         return lista;
     }
+
+    public int login(String u, String p){
+        int a =0;
+
+        Cursor cr=sql.rawQuery("select*from usuario",null);
+        if(cr!=null&&cr.moveToFirst()){
+            do {
+                if(cr.getString(1).equals(u)&&cr.getString(2).equals(p)){
+                    a++;
+                }
+
+            }while (cr.moveToNext());
+    }
+        return a;
+    }
+    //metodo si inicio
+    public Usuario getUsuario(String u, String p){
+        lista=selectUsuario();
+        for (Usuario us:lista){
+            if (us.getUsuario().equals(u)&&us.getPass().equals(p)){
+                return us;
+            }
+        }
+        return null;
+    }
+    //metodo para buscar po id
+
+    public Usuario getUsuario(int id){
+        lista=selectUsuario();
+        for (Usuario us:lista){
+            if (us.getId()==id){
+                return us;
+            }
+        }
+        return null;
+    }
 }
