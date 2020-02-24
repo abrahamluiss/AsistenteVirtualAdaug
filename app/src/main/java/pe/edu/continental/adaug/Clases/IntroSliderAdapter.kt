@@ -1,4 +1,4 @@
-package pe.edu.continental.adaug
+package pe.edu.continental.adaug.Clases
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import pe.edu.continental.adaug.R
 
 class IntroSliderAdapter(private val introSlide: List<IntroSlide>):
     RecyclerView.Adapter<IntroSliderAdapter.IntroSlideViewHolder>(){
@@ -35,7 +36,7 @@ class IntroSliderAdapter(private val introSlide: List<IntroSlide>):
         private val txtDescrip = view.findViewById<TextView>(R.id.txtDescripcion)
         private val imgIcon = view.findViewById<ImageView>(R.id.imageSlideIcon)
 
-        fun bind(introSlide:IntroSlide){
+        fun bind(introSlide: IntroSlide){
             txtTitle.text=introSlide.title
             txtDescrip.text=introSlide.descripton
             imgIcon.setImageResource(introSlide.icon)

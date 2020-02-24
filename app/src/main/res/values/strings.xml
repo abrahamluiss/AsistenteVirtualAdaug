@@ -10,4 +10,9 @@
     <string name="passw">*********</string>
     <string name="se_olvida_la_contrase_a">Se olvida la contraseña?</string>
     <string name="no_tiene_una_cuenta_registrese_ahora">No tiene una cuenta? Registrese ahora</string>
+    <string name="presione_para_hablar">Presione para hablar</string>
+    <string name="registro_de_cuenta">Registro de cuenta</string>
+    <string name="registrar">Registrar</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
 </resources>

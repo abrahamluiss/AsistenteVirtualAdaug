@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradiente"
-    tools:context=".Splash">
+    tools:context=".Actividades.Splash">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

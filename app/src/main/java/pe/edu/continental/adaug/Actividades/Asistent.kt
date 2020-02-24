@@ -1,7 +1,6 @@
-package pe.edu.continental.adaug
+package pe.edu.continental.adaug.Actividades
 
 import ai.api.AIConfiguration
-import ai.api.AIDataService
 import ai.api.AIListener
 import ai.api.android.AIService
 import ai.api.model.AIError
@@ -14,8 +13,7 @@ import android.speech.tts.TextToSpeech
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_asistent.*
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.jar.Manifest
+import pe.edu.continental.adaug.R
 
 class Asistent :AppCompatActivity(), AIListener, TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {//cuando intenta comunicarse con leer

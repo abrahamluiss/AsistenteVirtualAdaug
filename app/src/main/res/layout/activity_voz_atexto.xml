@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
+    tools:context=".Actividades.VozATexto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp">
+    </ScrollView>
+        <TextView
+            android:id="@+id/txtEntrada"
+            android:textColor="@color/colorWhite"
+            android:textSize="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:id="@+id/ContenedorBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            >
+
+            <ImageButton
+                android:id="@+id/btnHablar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparente"
+                android:tint="@color/colorWhite"
+                android:src="@drawable/ic_audio" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/presione_para_hablar"/>
+        </LinearLayout>
+
+
+</RelativeLayout>

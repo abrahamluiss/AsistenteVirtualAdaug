@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradiente"
-    tools:context=".Asistent">
+    tools:context=".Actividades.Asistent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

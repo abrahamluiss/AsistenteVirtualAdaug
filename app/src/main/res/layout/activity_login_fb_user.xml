@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Actividades.LoginFbUser">
+
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/app_name"
+    android:scaleType="centerCrop"
+    android:src="@drawable/campus" />
+<View
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparente"/>
+<ImageView
+    android:id="@+id/imgLogo"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_marginTop="80dp"
+    android:contentDescription="@string/app_name"
+    android:src="@drawable/conti"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+<TextView
+    android:id="@+id/txtInicia"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:text="@string/inicia_sesi_n"
+    android:textColor="@color/colorWhite"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+<TextView
+    android:id="@+id/txtDescripcionLog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/asistente_virtual_adaug"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:textColor="@color/colorWhite"
+    android:textSize="12sp"
+    android:textAllCaps="true"
+    android:gravity="center"
+    app:layout_constraintTop_toBottomOf="@id/txtInicia"
+    />
+<TextView
+    android:id="@+id/txtEmail"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="10dp"
+    android:text="@string/correo"
+    android:textAllCaps="true"
+    android:textColor="@color/colorWhite"
+    android:textSize="13sp"
+    app:layout_constraintEnd_toEndOf="@id/ViewCorreoDivision"
+    app:layout_constraintStart_toEndOf="@+id/imgCorreo"
+    app:layout_constraintTop_toBottomOf="@id/txtDescripcionLog"
+
+    />
+<EditText
+    android:id="@+id/inputUser"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:background="@null"
+    android:gravity="top"
+    android:hint="@string/correo_gmail_com"
+    android:inputType="textEmailAddress"
+    android:minHeight="35dp"
+    android:textColor="@color/colorWhite"
+    android:textColorHint="@color/colorWhite"
+    android:textSize="17sp"
+    app:layout_constraintEnd_toEndOf="@id/ViewCorreoDivision"
+    app:layout_constraintStart_toEndOf="@id/imgCorreo"
+    app:layout_constraintTop_toBottomOf="@id/txtEmail"
+
+    />
+<View
+    android:id="@+id/ViewCorreoDivision"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:background="@color/colorWhite"
+    app:layout_constraintTop_toBottomOf="@id/inputUser"
+    />
+<ImageView
+    android:id="@+id/imgCorreo"
+    android:layout_marginStart="8dp"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:src="@drawable/arroba"
+    android:tint="@color/colorWhite"
+    android:contentDescription="@string/app_name"
+    app:layout_constraintTop_toTopOf="@+id/txtEmail"
+    app:layout_constraintBottom_toTopOf="@+id/ViewCorreoDivision"
+    app:layout_constraintStart_toStartOf="@id/ViewCorreoDivision"
+    />
+
+<TextView
+    android:id="@+id/txtPass"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="10dp"
+    android:text="@string/contrase_a"
+    android:textAllCaps="true"
+    android:textColor="@color/colorWhite"
+    android:textSize="13sp"
+    app:layout_constraintEnd_toEndOf="@id/ViewCorreoDivision"
+    app:layout_constraintStart_toEndOf="@+id/imgCorreo"
+    app:layout_constraintTop_toBottomOf="@id/ViewCorreoDivision"
+    />
+
+<EditText
+    android:id="@+id/inputContrasena"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:background="@null"
+    android:gravity="top"
+    android:hint="@string/passw"
+    android:inputType="textPassword"
+    android:minHeight="35dp"
+    android:textColor="@color/colorWhite"
+    android:textColorHint="@color/colorWhite"
+    android:textSize="17sp"
+    app:layout_constraintEnd_toEndOf="@id/ViewCorreoDivision"
+    app:layout_constraintStart_toEndOf="@id/imgCorreo"
+    app:layout_constraintTop_toBottomOf="@id/txtPass"
+    tools:ignore='Autofill'
+    />
+<ImageView
+    android:id="@+id/imgPass"
+    android:layout_marginStart="8dp"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:src="@drawable/pass"
+    android:tint="@color/colorWhite"
+    android:contentDescription="@string/app_name"
+    app:layout_constraintBottom_toTopOf="@+id/ViewPassDivision"
+    app:layout_constraintStart_toStartOf="@+id/ViewCorreoDivision"
+    app:layout_constraintTop_toBottomOf="@id/txtPass"
+    />
+<View
+    android:id="@+id/ViewPassDivision"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:background="@color/colorWhite"
+    app:layout_constraintTop_toBottomOf="@id/inputContrasena"
+    />
+
+    <Button
+        android:id="@+id/btnIniciaSesion"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn_background"
+        android:text="@string/inicia_sesi_n"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/ViewPassDivision"
+        android:onClick="Ingresar"
+        tools:layout_editor_absoluteX="50dp" />
+
+    <TextView
+    android:id="@+id/txtRegistro"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:text="@string/registro_de_cuenta"
+    android:textColor="@color/colorWhite"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/btnIniciaSesion"
+        android:onClick="Registro"
+    />
+
+<LinearLayout
+    android:id="@+id/lytRedSocial"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+    app:layout_constraintTop_toBottomOf="@id/txtRegistro"
+    app:layout_constraintVertical_bias="0.0"
+    tools:layout_editor_absoluteX="16dp">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_facebook"
+        android:tint="@color/colorWhite" />
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
