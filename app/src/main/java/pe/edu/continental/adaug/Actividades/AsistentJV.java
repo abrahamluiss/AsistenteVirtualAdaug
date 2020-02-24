@@ -22,13 +22,15 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     private TextView respuesta;
     private ArrayList<Respuestas> respuest;
     private TextToSpeech leer;
+    String txtPRueba;
     String rptaDistHyo="1841km" ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asistent_jv);
-
+        txtPRueba=getIntent().getStringExtra("direccione");
         inicializar();
     }
 
@@ -85,7 +87,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     public ArrayList<Respuestas> proveerDatos(){
         ArrayList<Respuestas> respuestas = new ArrayList<>();
         respuestas.add(new Respuestas("defecto", "¡Aun no estoy programada para responder eso, lo siento!"));
-        respuestas.add(new Respuestas("hola", "hola que tal"));
+        respuestas.add(new Respuestas("hola", "hola "+ txtPRueba));
         respuestas.add(new Respuestas("chiste", "¿Sabes que mi hermano anda en bicicleta desde los 4 años? Mmm, ya debe estar lejos"));
         respuestas.add(new Respuestas("adios", "que descanses"));
         respuestas.add(new Respuestas("como estas", "esperando serte de ayuda"));

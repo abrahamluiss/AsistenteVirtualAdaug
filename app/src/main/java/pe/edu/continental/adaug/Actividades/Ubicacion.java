@@ -32,6 +32,7 @@ public class Ubicacion extends AppCompatActivity {
     TextView txtDireccion;
     Button btnEnviar, btnListarUbic;
     DatabaseHelper miBD;
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,12 @@ public class Ubicacion extends AppCompatActivity {
     public void agregar(String nuevaEntrada){
         boolean insertarDato = miBD.addData(nuevaEntrada);
         if(insertarDato==true){
+
             Toast.makeText(this, "Dato enviado gracias", Toast.LENGTH_LONG).show();
+            i = new Intent(this, AsistentJV.class);
+            i.putExtra("direccione", String.valueOf(nuevaEntrada));
+            startActivity(i);
+
         }else {
             Toast.makeText(this, "Dato no enviado!!", Toast.LENGTH_LONG).show();
         }
@@ -118,8 +124,9 @@ public class Ubicacion extends AppCompatActivity {
                         loc.getLatitude(), loc.getLongitude(), 1);
                 if (!list.isEmpty()) {
                     Address DirCalle = list.get(0);
-                    txtDireccion.setText("Mi direccion es: "
-                            + DirCalle.getAddressLine(0)+" \n Longitud: "+loc.getLongitude()+"\n Latitud: "+loc.getLatitude());
+                    String direccionTotal =DirCalle.getAddressLine(0)+" \n Longitud: "+loc.getLongitude()+"\n Latitud: "+loc.getLatitude();
+                    txtDireccion.setText("Mi direccion es: " + direccionTotal);
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();
