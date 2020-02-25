@@ -88,7 +88,10 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         String rptas = "";
         if(cuestion.equals("llamar")){
 
-            EnviarMensaje("955446977","Hola, "+miUbicacion);
+            String numero="955446977";
+            String mensaje="Mensaje de prueba";
+            EnviarMensaje(numero,mensaje);
+            Toast.makeText(this, "Enviado a: "+numero+mensaje, Toast.LENGTH_SHORT).show();
 
 
             //Uri number = Uri.parse("tel:5551234");

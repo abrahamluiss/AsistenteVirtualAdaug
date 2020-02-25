@@ -134,8 +134,8 @@ public class Ubicacion extends AppCompatActivity {
                     Address DirCalle = list.get(0);
                     Double longActual=loc.getLongitude();
                     Double latActual = loc.getLatitude();
-                    String direccionTotal =DirCalle.getAddressLine(0)+" \n Longitud: "+longActual+"\n Latitud: "+latActual;
-                    txtDireccion.setText("Mi direccion es: " + direccionTotal);
+                    String direccionTotal =DirCalle.getAddressLine(0)+" \n Lng: "+longActual+"\n Lat: "+latActual;
+                    txtDireccion.setText("Direccion: " + direccionTotal);
 
 
                     Location.distanceBetween(latActual,longActual,PConstHyoLat,PConstHyoLng,results);
