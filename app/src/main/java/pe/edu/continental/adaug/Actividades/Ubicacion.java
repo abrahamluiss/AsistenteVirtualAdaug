@@ -19,6 +19,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,12 +32,13 @@ import pe.edu.continental.adaug.Entidades.DatabaseHelper;
 import pe.edu.continental.adaug.R;
 
 public class Ubicacion extends AppCompatActivity {
+    EditText edtNum, edNombre;
     TextView txtDireccion;
     Button btnEnviar, btnListarUbic;
     DatabaseHelper miBD;
     Intent i;
-    Double PConstHyoLat=2.0;
-    Double PConstHyoLng=3.0;
+    Double PConstHyoLat=-12.06813238;
+    Double PConstHyoLng=-75.21008492;
     float distanciaKm = 0;
     float[] results = new float[1];
 
@@ -48,7 +50,8 @@ public class Ubicacion extends AppCompatActivity {
         txtDireccion = findViewById(R.id.txtMuestraUbicacion);
         btnEnviar=findViewById(R.id.btnGuardaUbicacion);
         btnListarUbic=findViewById(R.id.btnListarUbicaciones);
-
+        edNombre=findViewById(R.id.edtNombre);
+        edtNum=findViewById(R.id.edtNumero);
         miBD = new DatabaseHelper(this);
 
 
@@ -85,10 +88,15 @@ public class Ubicacion extends AppCompatActivity {
         boolean insertarDato = miBD.addData(nuevaEntrada);
         if(insertarDato==true){
 
-            Toast.makeText(this, "Dato enviado gracias", Toast.LENGTH_LONG).show();
+            String numerC = edtNum.getText().toString();
+            String nombC = edNombre.getText().toString();
             i = new Intent(this, AsistentJV.class);
             i.putExtra("direccione", String.valueOf(nuevaEntrada));
             i.putExtra("distancia", String.valueOf(distanciaKm));
+            i.putExtra("numC", numerC);
+            i.putExtra("nomC", nombC);
+            Toast.makeText(this, "Configuracion correcta:" +numerC+" "+nombC, Toast.LENGTH_LONG).show();
+
             startActivity(i);
 
 

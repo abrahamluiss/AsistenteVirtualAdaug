@@ -30,6 +30,8 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     private ArrayList<Respuestas> respuest;
     private TextToSpeech leer;
     String miUbicacion, distancia ;
+    String nombreC="";
+    String numeroC="";
     Intent llamar;
 
     @Override
@@ -49,6 +51,8 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
 
             miUbicacion=getIntent().getStringExtra("direccione");
         distancia=getIntent().getStringExtra("distancia");
+        nombreC=getIntent().getStringExtra("nomC");
+        numeroC=getIntent().getStringExtra("numC");
 
         inicializar();
     }
@@ -84,14 +88,22 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         responder(respuesta);
     }
 
-    private String actividades(String cuestion) {
+    public void EnviarMensaje(String numero, String mensaje){
+
+        try {
+            SmsManager sms = SmsManager.getDefault();
+            sms.sendTextMessage(numero, null, mensaje, null, null);
+            Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(this, "Mensaje no enviado", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public String actividades(String cuestion) {
         String rptas = "";
         if(cuestion.equals("llamar")){
 
-            String numero="955446977";
-            String mensaje="Mensaje de prueba";
-            EnviarMensaje(numero,mensaje);
-            Toast.makeText(this, "Enviado a: "+numero+mensaje, Toast.LENGTH_SHORT).show();
+            EnviarMensaje(numeroC,miUbicacion);
+            Toast.makeText(this, "Enviado a: "+numeroC+miUbicacion, Toast.LENGTH_SHORT).show();
 
 
             //Uri number = Uri.parse("tel:5551234");
@@ -136,8 +148,8 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("como estas", "esperando serte de ayuda"));
         respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"+miUbicacion));
         respuestas.add(new Respuestas("mi direccion", " "+miUbicacion));
-        respuestas.add(new Respuestas("distancia", " "+distancia));
-        respuestas.add(new Respuestas("llamar", " "+"claro"));
+        respuestas.add(new Respuestas("distancia a la plaza constitucion huancayo", " "+distancia));
+        respuestas.add(new Respuestas("mensaje", " "+"Mensaje a:"+nombreC+" con telefono: "+numeroC));
 
 
 
@@ -154,14 +166,4 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
 
     }
 
-    public void EnviarMensaje(String numero, String mensaje){
-
-        try {
-            SmsManager sms = SmsManager.getDefault();
-            sms.sendTextMessage(numero, null, mensaje, null, null);
-            Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
-        }catch (Exception e){
-            Toast.makeText(this, "Mensaje no enviado", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

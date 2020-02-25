@@ -39,9 +39,25 @@
             android:fontFamily="casual"
              />
 
-        <Space
+        <EditText
+            android:id="@+id/edtNombre"
             android:layout_width="match_parent"
-            android:layout_height="98dp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:hint="Nombre de contacto" />
+
+        <EditText
+            android:id="@+id/edtNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:hint="Numero de contacto" />
 
         <Button
             android:id="@+id/btnGuardaUbicacion"
