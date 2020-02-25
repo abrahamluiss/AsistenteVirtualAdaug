@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 IntroSlide(
                     "Hola",
-                    "Mi nombre es adaug",
+                    "Mi nombre es adaug, tu asistente virtual",
                     R.drawable.ic_radio
 
                 ),
                 IntroSlide(
-                    "Te escucho",
-                    "Puedes preguntarme lo que sea",
+                    "Sabre tu dirección exacta",
+                    "Con tu dirección me permitira ayudarte con algunas funciones",
                     R.drawable.ic_music_and_multimedia
                 ),
                 IntroSlide(

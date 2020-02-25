@@ -152,7 +152,7 @@ tools:context=".Actividades.LoginFbUser">
     android:contentDescription="@string/app_name"
     app:layout_constraintBottom_toTopOf="@+id/ViewPassDivision"
     app:layout_constraintStart_toStartOf="@+id/ViewCorreoDivision"
-    app:layout_constraintTop_toBottomOf="@id/txtPass"
+    app:layout_constraintTop_toBottomOf="@id/ViewCorreoDivision"
     />
 <View
     android:id="@+id/ViewPassDivision"
@@ -203,7 +203,7 @@ tools:context=".Actividades.LoginFbUser">
     app:layout_constraintTop_toBottomOf="@id/txtRegistro"
     app:layout_constraintVertical_bias="0.0"
     tools:layout_editor_absoluteX="16dp">
-
+<!--
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
@@ -211,7 +211,7 @@ tools:context=".Actividades.LoginFbUser">
         android:layout_marginEnd="5dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_facebook"
-        android:tint="@color/colorWhite" />
+        android:tint="@color/colorWhite" /> -->
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
