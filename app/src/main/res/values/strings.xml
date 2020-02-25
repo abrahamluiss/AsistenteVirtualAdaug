@@ -22,4 +22,7 @@
     <string name="lista_de_ubicaci_n">Lista de ubicación</string>
     <string name="bienvenido">Bienvenido:</string>
     <string name="ubicacion">Ubicacion</string>
+    <string name="numero_de_celular">Numero de celular</string>
+    <string name="nombre_de_contacto">Nombre de contacto</string>
+
 </resources>

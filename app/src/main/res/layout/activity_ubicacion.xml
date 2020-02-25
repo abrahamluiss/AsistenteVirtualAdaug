@@ -5,59 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+    android:background="@drawable/gradiente02"
     tools:context=".Actividades.Ubicacion">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/app_name"
-        android:scaleType="centerCrop"
-        android:src="@drawable/mapa05" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorTransparente"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:orientation="vertical" >
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="63dp" />
-
         <TextView
             android:id="@+id/txtMuestraUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="16sp"
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="@color/colorWhite"
             android:fontFamily="casual"
              />
 
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="@string/correo" />
+
         <EditText
-            android:id="@+id/edtNombre"
+            android:id="@+id/edtCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Correo" />
-
+            android:hint="@string/correo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="@string/nombre_de_contacto" />
+        <EditText
+            android:id="@+id/edtNombreContac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:hint="@string/nombre_de_contacto" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:text="@string/numero_de_celular" />
         <EditText
             android:id="@+id/edtNumero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Mensaje" />
+            android:hint="@string/numero_de_celular" />
+
 
         <Button
             android:id="@+id/btnGuardaUbicacion"

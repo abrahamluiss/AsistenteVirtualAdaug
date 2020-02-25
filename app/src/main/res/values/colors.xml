@@ -8,5 +8,8 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransparente">#C6000000</color>
 
+    <color name="colorBlue">#0808f9</color>
+    <color name="colorBlueDark">#020024</color>
+    <color name="colorCeleste">#00d4ff</color>
 
 </resources>

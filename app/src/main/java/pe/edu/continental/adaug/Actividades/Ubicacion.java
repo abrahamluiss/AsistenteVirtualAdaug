@@ -32,7 +32,7 @@ import pe.edu.continental.adaug.Entidades.DatabaseHelper;
 import pe.edu.continental.adaug.R;
 
 public class Ubicacion extends AppCompatActivity {
-    EditText edtNum, edNombre;
+    EditText edtCorreo, edtNumero,edtNombre;
     TextView txtDireccion;
     Button btnEnviar, btnListarUbic;
     DatabaseHelper miBD;
@@ -50,8 +50,9 @@ public class Ubicacion extends AppCompatActivity {
         txtDireccion = findViewById(R.id.txtMuestraUbicacion);
         btnEnviar=findViewById(R.id.btnGuardaUbicacion);
         btnListarUbic=findViewById(R.id.btnListarUbicaciones);
-        edNombre=findViewById(R.id.edtNombre);
-        edtNum=findViewById(R.id.edtNumero);
+        edtNumero=findViewById(R.id.edtNumero);
+        edtNombre=findViewById(R.id.edtNombreContac);
+        edtCorreo=findViewById(R.id.edtCorreo);
         miBD = new DatabaseHelper(this);
 
 
@@ -88,14 +89,16 @@ public class Ubicacion extends AppCompatActivity {
         boolean insertarDato = miBD.addData(nuevaEntrada);
         if(insertarDato==true){
 
-            String numerC = edtNum.getText().toString();
-            String nombC = edNombre.getText().toString();
+            String numerC = edtNumero.getText().toString();
+            String correoC = edtCorreo.getText().toString();
+            String nombreC= edtNombre.getText().toString();
             i = new Intent(this, AsistentJV.class);
             i.putExtra("direccione", String.valueOf(nuevaEntrada));
             i.putExtra("distancia", String.valueOf(distanciaKm));
             i.putExtra("numC", numerC);
-            i.putExtra("nomC", nombC);
-            Toast.makeText(this, "Configuracion correcta:" +numerC+" "+nombC, Toast.LENGTH_LONG).show();
+            i.putExtra("nomC", nombreC);
+            i.putExtra("correoC", correoC);
+            Toast.makeText(this, "Configuracion correcta:" + nombreC+" , " +numerC+" y "+correoC, Toast.LENGTH_LONG).show();
 
             startActivity(i);
 
@@ -148,6 +151,7 @@ public class Ubicacion extends AppCompatActivity {
 
                     Location.distanceBetween(latActual,longActual,PConstHyoLat,PConstHyoLng,results);
                     distanciaKm = results[0] / 1000;
+
 
                 }
             } catch (IOException e) {

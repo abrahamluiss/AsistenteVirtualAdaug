@@ -24,7 +24,7 @@ import pe.edu.continental.adaug.Clases.Respuestas;
 
 public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
-    private static final int RECONOCEDOR_VOZ = 7;
+    private static final int RECONOCEDOR_VOZ=7;
     private TextView escuchando;
     private TextView respuesta;
     private ArrayList<Respuestas> respuest;
@@ -32,6 +32,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     String miUbicacion, distancia ;
     String nombreC="";
     String numeroC="";
+    String correC="";
     Intent llamar;
 
     @Override
@@ -53,6 +54,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         distancia=getIntent().getStringExtra("distancia");
         nombreC=getIntent().getStringExtra("nomC");
         numeroC=getIntent().getStringExtra("numC");
+        correC=getIntent().getStringExtra("correoC");
 
         inicializar();
     }
@@ -79,15 +81,29 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
             resultado = sintilde.toLowerCase().indexOf(respuest.get(i).getCuestion());
             if(resultado != -1){
                 respuesta = respuest.get(i).getRespuestas();
-                if (!actividades(respuest.get(i).getCuestion()).equals("")){
-                    respuesta += actividades(respuest.get(i).getCuestion());
+                if (!mensaje(respuest.get(i).getCuestion()).equals("")){
+                    respuesta += mensaje(respuest.get(i).getCuestion());
                 }
-
+                if (!llamarInt(respuest.get(i).getCuestion()).equals("")){
+                    respuesta += llamarInt(respuest.get(i).getCuestion());
+                }
             }
         }
         responder(respuesta);
     }
 
+    private String llamarInt(String num) {
+        String rptas = "";
+        if(num.equals("llamar")){
+
+            Uri number = Uri.parse("tel:"+numeroC);
+            llamar = new Intent(Intent.ACTION_DIAL, number);
+            startActivity(llamar);
+        }
+
+        return rptas;
+    }
+/**
     public void EnviarMensaje(String numero, String mensaje){
 
         try {
@@ -97,12 +113,13 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         }catch (Exception e){
             Toast.makeText(this, "Mensaje no enviado", Toast.LENGTH_SHORT).show();
         }
-    }
-    public String actividades(String cuestion) {
+    }**/
+    public String mensaje(String cuestion) {
         String rptas = "";
-        if(cuestion.equals("mensaje")){
+        String subject= "Mi direccion exacta es";
+        if(cuestion.equals("enviar mensaje de mi ubicacion")||cuestion.equals("enviar mensaje")){
 
-            sendEmail(nombreC,numeroC,miUbicacion);
+            sendEmail(correC,subject,miUbicacion);
 
             //EnviarMensaje(numeroC,"xd"+miUbicacion);
             //Toast.makeText(this, "Enviado a: "+numeroC+miUbicacion, Toast.LENGTH_SHORT).show();
@@ -116,16 +133,16 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         return rptas;
     }
 
-    private void sendEmail(String nombreC, String numeroC, String miUbicacion) {
-        //ACION DE ENVIO
+    private void sendEmail(String correC, String subject, String miUbicacion) {
+
         Intent mEmailInte=new Intent(Intent.ACTION_SEND);
         mEmailInte.setData(Uri.parse("mailto:"));
         mEmailInte.setType("text/pain");
-        mEmailInte.putExtra(Intent.EXTRA_EMAIL, new String[]{nombreC});
-        mEmailInte.putExtra(Intent.EXTRA_SUBJECT,numeroC);
+        mEmailInte.putExtra(Intent.EXTRA_EMAIL, new String[]{correC});
+        mEmailInte.putExtra(Intent.EXTRA_SUBJECT,subject);
         mEmailInte.putExtra(Intent.EXTRA_TEXT,miUbicacion);
         try {
-            startActivity(Intent.createChooser(mEmailInte, "Correo cliente"));
+            startActivity(Intent.createChooser(mEmailInte, "Correo contacto"));
         }catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -166,7 +183,10 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"+miUbicacion));
         respuestas.add(new Respuestas("mi direccion", " "+miUbicacion));
         respuestas.add(new Respuestas("distancia a la plaza constitucion huancayo", " "+distancia));
-        respuestas.add(new Respuestas("mensaje", " "+"Mensaje a:"+nombreC+" con telefono: "+numeroC));
+        respuestas.add(new Respuestas("enviar mensaje de mi ubicacion", " "+"Mensaje a:"+correC));
+        respuestas.add(new Respuestas("enviar mensaje", " "+"Mensaje a:"+correC));
+        respuestas.add(new Respuestas("llamar", "Llamando"));
+
 
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente"
+    android:background="@drawable/gradiente02"
     tools:context=".Actividades.VozATexto">
     <TextView
         android:id="@+id/txtAgenda"
