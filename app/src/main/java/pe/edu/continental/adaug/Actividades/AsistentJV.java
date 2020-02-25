@@ -2,6 +2,7 @@ package pe.edu.continental.adaug.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Build;
 import android.speech.RecognizerIntent;
@@ -23,7 +24,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     private ArrayList<Respuestas> respuest;
     private TextToSpeech leer;
     String miUbicacion, distancia ;
-
+    Intent llamar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +58,25 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
             resultado = sintilde.toLowerCase().indexOf(respuest.get(i).getCuestion());
             if(resultado != -1){
                 respuesta = respuest.get(i).getRespuestas();
+                if (!actividades(respuest.get(i).getCuestion()).equals("")){
+                    respuesta += actividades(respuest.get(i).getCuestion());
+                }
+
             }
         }
         responder(respuesta);
+    }
+
+    private String actividades(String cuestion) {
+        String rptas = "";
+        if(cuestion.equals("llamar")){
+
+            Uri number = Uri.parse("tel:5551234");
+            llamar = new Intent(Intent.ACTION_DIAL, number);
+            startActivity(llamar);
+        }
+
+        return rptas;
     }
 
     private void responder(String respuestita) {
@@ -76,6 +93,8 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuesta = findViewById(R.id.tvRespuesta);
         respuest = proveerDatos();
         leer = new TextToSpeech(this, this);
+
+
     }
 
     public void hablar(View v){
@@ -95,6 +114,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"+miUbicacion));
         respuestas.add(new Respuestas("mi direccion", " "+miUbicacion));
         respuestas.add(new Respuestas("distancia", " "+distancia));
+        respuestas.add(new Respuestas("llamar", " "+"claro"));
 
 
 
