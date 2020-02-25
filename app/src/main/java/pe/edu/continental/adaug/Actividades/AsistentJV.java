@@ -1,14 +1,20 @@
 package pe.edu.continental.adaug.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Build;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
@@ -30,7 +36,18 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asistent_jv);
-        miUbicacion=getIntent().getStringExtra("direccione");
+
+        if(ActivityCompat.checkSelfPermission(
+                AsistentJV.this, Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED&& ActivityCompat.checkSelfPermission(
+                AsistentJV.this,Manifest
+                        .permission.SEND_SMS)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(AsistentJV.this,new String[]
+                    { Manifest.permission.SEND_SMS,},1000);
+        }else{}
+
+
+            miUbicacion=getIntent().getStringExtra("direccione");
         distancia=getIntent().getStringExtra("distancia");
 
         inicializar();
@@ -71,9 +88,12 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         String rptas = "";
         if(cuestion.equals("llamar")){
 
-            Uri number = Uri.parse("tel:5551234");
-            llamar = new Intent(Intent.ACTION_DIAL, number);
-            startActivity(llamar);
+            EnviarMensaje("955446977","Hola, "+miUbicacion);
+
+
+            //Uri number = Uri.parse("tel:5551234");
+            //llamar = new Intent(Intent.ACTION_DIAL, number);
+            //startActivity(llamar);
         }
 
         return rptas;
@@ -129,5 +149,16 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public void EnviarMensaje(String numero, String mensaje){
+
+        try {
+            SmsManager sms = SmsManager.getDefault();
+            sms.sendTextMessage(numero, null, mensaje, null, null);
+            Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(this, "Mensaje no enviado", Toast.LENGTH_SHORT).show();
+        }
     }
 }
