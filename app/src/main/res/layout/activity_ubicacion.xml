@@ -47,7 +47,7 @@
             android:inputType="textPersonName"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Nombre de contacto" />
+            android:hint="Correo" />
 
         <EditText
             android:id="@+id/edtNumero"
@@ -57,7 +57,7 @@
             android:inputType="textPersonName"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Numero de contacto" />
+            android:hint="Mensaje" />
 
         <Button
             android:id="@+id/btnGuardaUbicacion"

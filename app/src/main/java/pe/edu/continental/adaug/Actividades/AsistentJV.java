@@ -102,8 +102,10 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         String rptas = "";
         if(cuestion.equals("mensaje")){
 
-            EnviarMensaje(numeroC,"xd"+miUbicacion);
-            Toast.makeText(this, "Enviado a: "+numeroC+miUbicacion, Toast.LENGTH_SHORT).show();
+            sendEmail(nombreC,numeroC,miUbicacion);
+
+            //EnviarMensaje(numeroC,"xd"+miUbicacion);
+            //Toast.makeText(this, "Enviado a: "+numeroC+miUbicacion, Toast.LENGTH_SHORT).show();
 
 
             //Uri number = Uri.parse("tel:5551234");
@@ -112,6 +114,21 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         }
 
         return rptas;
+    }
+
+    private void sendEmail(String nombreC, String numeroC, String miUbicacion) {
+        //ACION DE ENVIO
+        Intent mEmailInte=new Intent(Intent.ACTION_SEND);
+        mEmailInte.setData(Uri.parse("mailto:"));
+        mEmailInte.setType("text/pain");
+        mEmailInte.putExtra(Intent.EXTRA_EMAIL, new String[]{nombreC});
+        mEmailInte.putExtra(Intent.EXTRA_SUBJECT,numeroC);
+        mEmailInte.putExtra(Intent.EXTRA_TEXT,miUbicacion);
+        try {
+            startActivity(Intent.createChooser(mEmailInte, "Correo cliente"));
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void responder(String respuestita) {
