@@ -22,7 +22,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     private TextView respuesta;
     private ArrayList<Respuestas> respuest;
     private TextToSpeech leer;
-    String miUbicacion ;
+    String miUbicacion, distancia ;
 
 
     @Override
@@ -30,6 +30,8 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asistent_jv);
         miUbicacion=getIntent().getStringExtra("direccione");
+        distancia=getIntent().getStringExtra("distancia");
+
         inicializar();
     }
 
@@ -92,6 +94,7 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
         respuestas.add(new Respuestas("como estas", "esperando serte de ayuda"));
         respuestas.add(new Respuestas("nombre", "mis amigos me llaman Adaug"+miUbicacion));
         respuestas.add(new Respuestas("mi direccion", " "+miUbicacion));
+        respuestas.add(new Respuestas("distancia", " "+distancia));
 
 
 

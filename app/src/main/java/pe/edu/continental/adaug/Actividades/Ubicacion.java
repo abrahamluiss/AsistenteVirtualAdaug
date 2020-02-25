@@ -3,6 +3,7 @@ package pe.edu.continental.adaug.Actividades;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -33,6 +35,11 @@ public class Ubicacion extends AppCompatActivity {
     Button btnEnviar, btnListarUbic;
     DatabaseHelper miBD;
     Intent i;
+    Double PConstHyoLat=2.0;
+    Double PConstHyoLng=3.0;
+    float distanciaKm = 0;
+    float[] results = new float[1];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +88,9 @@ public class Ubicacion extends AppCompatActivity {
             Toast.makeText(this, "Dato enviado gracias", Toast.LENGTH_LONG).show();
             i = new Intent(this, AsistentJV.class);
             i.putExtra("direccione", String.valueOf(nuevaEntrada));
+            i.putExtra("distancia", String.valueOf(distanciaKm));
             startActivity(i);
+
 
         }else {
             Toast.makeText(this, "Dato no enviado!!", Toast.LENGTH_LONG).show();
@@ -123,8 +132,14 @@ public class Ubicacion extends AppCompatActivity {
                         loc.getLatitude(), loc.getLongitude(), 1);
                 if (!list.isEmpty()) {
                     Address DirCalle = list.get(0);
-                    String direccionTotal =DirCalle.getAddressLine(0)+" \n Longitud: "+loc.getLongitude()+"\n Latitud: "+loc.getLatitude();
+                    Double longActual=loc.getLongitude();
+                    Double latActual = loc.getLatitude();
+                    String direccionTotal =DirCalle.getAddressLine(0)+" \n Longitud: "+longActual+"\n Latitud: "+latActual;
                     txtDireccion.setText("Mi direccion es: " + direccionTotal);
+
+
+                    Location.distanceBetween(latActual,longActual,PConstHyoLat,PConstHyoLng,results);
+                    distanciaKm = results[0] / 1000;
 
                 }
             } catch (IOException e) {
@@ -132,6 +147,9 @@ public class Ubicacion extends AppCompatActivity {
             }
         }
     }
+
+
+
     /* Aqui empieza la Clase Localizacion */
     public class Localizacion implements LocationListener {
         Ubicacion ubicacion;
