@@ -100,9 +100,9 @@ public class AsistentJV extends AppCompatActivity implements TextToSpeech.OnInit
     }
     public String actividades(String cuestion) {
         String rptas = "";
-        if(cuestion.equals("llamar")){
+        if(cuestion.equals("mensaje")){
 
-            EnviarMensaje(numeroC,miUbicacion);
+            EnviarMensaje(numeroC,"xd"+miUbicacion);
             Toast.makeText(this, "Enviado a: "+numeroC+miUbicacion, Toast.LENGTH_SHORT).show();
 
 
