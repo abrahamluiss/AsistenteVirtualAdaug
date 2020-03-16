@@ -7,7 +7,7 @@
 
 # AsistenteVirtualAdaug
 
-###Caracteristicas
+- Caracteristicas
 Asistente Virtual Adaug creado en el curso de desarrollo de soluciones moviles.
 Utilizar con comandos de voz algunas actividades.
 #Capturas
@@ -29,11 +29,12 @@ Utilizar con comandos de voz algunas actividades.
 8. Menu - Asistente virtual | Agenda
 ![](https://i.ibb.co/n10SRC9/adaug8.png "Asistente")
 
-#TODO
+TODO
 ------------
 - Base de datos para capturar los datos de la agenda
 - Inicio de sesión con Fb
 - Registro de datos de ubicación en una base de datos remota, usuarios, y configuración
-#Cambios
+
+Cambios
 ------------
 - Puede llamar o enviar la ubicación actual segun la configuración inicial
