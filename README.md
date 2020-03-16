@@ -7,26 +7,26 @@
 
 # AsistenteVirtualAdaug
 
-- Caracteristicas
+## Caracteristicas
 Asistente Virtual Adaug creado en el curso de desarrollo de soluciones moviles.
 Utilizar con comandos de voz algunas actividades.
-#Capturas
+# Capturas
 ------------
-1.  Splash
+-  Splash
 ![](https://i.ibb.co/qjVm02W/adaug1.png "splash")
-2. Tutorial
+- Tutorial
 ![](https://i.ibb.co/wQ86FcF/adaug2.png "Tutorial")
-3. Registro
+- Registro
 ![](https://i.ibb.co/RTxHCCH/adaug4.png "Registro")
-4. Inicio
+- Inicio
 ![](https://i.ibb.co/n0xZDP6/adaug3.png "Inicio")
-5. Menu
+- Menu
 ![](https://i.ibb.co/z4WBgw1/adaug5.png "Menu")
-6. Menu - Ubicación
+- Menu - Ubicación
 ![](https://i.ibb.co/g648Ctr/adaug6.png "Ubicación")
-7. Menu - Asistente virtual
+- Menu - Asistente virtual
 ![](https://i.ibb.co/Tt28FKZ/adaug7.png "Asistente")
-8. Menu - Asistente virtual | Agenda
+- Menu - Asistente virtual | Agenda
 ![](https://i.ibb.co/n10SRC9/adaug8.png "Asistente")
 
 #TODO
